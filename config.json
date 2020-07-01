@@ -1,0 +1,41 @@
+
+{
+    "model" : {
+        "min_input_size":       288,
+        "max_input_size":       448,
+        "anchors":              [195,7, 219,15, 276,40, 291,25, 351,11, 382,58, 386,17, 401,33, 409,96],
+        "labels":               ["bump"]
+    },
+
+    "train": {
+        "train_image_folder":   "dataset/hump/hump/data_train/feature/",
+        "train_annot_folder":   "dataset/hump/hump/data_train/label/",
+        "cache_name":           "bumpt.pkl",
+
+        "train_times":          8,
+        "batch_size":           4,
+        "learning_rate":        1e-4,
+        "nb_epochs":            100,
+        "warmup_epochs":        3,
+        "ignore_thresh":        0.5,
+        "gpus":                 "-1",
+
+        "grid_scales":          [1,1,1],
+        "obj_scale":            5,
+        "noobj_scale":          1,
+        "xywh_scale":           1,
+        "class_scale":          1,
+
+        "tensorboard_dir":      "logs",
+        "saved_weights_name":   "bump.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "dataset/hump/hump/data_val/feature/",
+        "valid_annot_folder":   "dataset/hump/hump/data_val/label/",
+        "cache_name":           "bumpv.pkl",
+
+        "valid_times":          1
+    }
+}

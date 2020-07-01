@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data</folder>
+	<filename>imgge58.jpg</filename>
+	<path>D:\bump\data\imgge58.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>353</width>
+		<height>627</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bump</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>93</xmin>
+			<ymin>233</ymin>
+			<xmax>278</xmax>
+			<ymax>248</ymax>
+		</bndbox>
+	</object>
+</annotation>

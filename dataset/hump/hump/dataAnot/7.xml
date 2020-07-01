@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data</folder>
+	<filename>7.jpg</filename>
+	<path>D:\bump\data\7.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>773</width>
+		<height>1371</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>bump</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>79</xmin>
+			<ymin>660</ymin>
+			<xmax>760</xmax>
+			<ymax>730</ymax>
+		</bndbox>
+	</object>
+</annotation>
