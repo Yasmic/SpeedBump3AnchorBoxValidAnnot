@@ -103,17 +103,28 @@ def _main_(args):
         video_writer.release()       
     else: # do detection on an image or a set of images
         image_paths = []
+        xml_paths = []
+
+
 
         if os.path.isdir(input_path): 
             for inp_file in os.listdir(input_path):
                 image_paths += [input_path + inp_file]
+                
         else:
             image_paths += [input_path]
+            
+        if os.path.isdir(xml_path): 
+            for inp_file in os.listdir(xml_path):
+                xml_paths += [xml_path + inp_file]
+                
+        else:
+            xml_paths += [xml_path]
 
         image_paths = [inp_file for inp_file in image_paths if (inp_file[-4:] in ['.jpg', '.png', 'JPEG'])]
 
         # the main loop
-        for image_path in image_paths:
+        for i,image_path in enumerate (image_paths):
             image = cv2.imread(image_path)
             print(image_path)
 
@@ -123,8 +134,8 @@ def _main_(args):
 
             # draw bounding boxes on the image using labels
             draw_boxes(image, boxes, config['model']['labels'], obj_thresh) 
-            if(xml_path != None):
-                tree = ET.parse(xml_path)
+            if(xml_paths[i] != None):
+                tree = ET.parse(xml_paths[i])
                 root = tree.getroot()            
                 for object in root.findall('object'):
                     for bndbox in object.findall('bndbox'):
